@@ -29,5 +29,14 @@ if [ ! -d "gflags" ]; then
 	tar zxf v2.2.1.tar.gz
 	mv gflags-2.2.1 gflags
 	rm -rf v2.2.1.tar.gz
-fi  
+fi
+
+# glog
+if [ ! -d "glog" ]; then
+	echo "prepare glog"
+	wget https://github.com/google/glog/archive/v0.3.5.tar.gz
+	tar zxf v0.3.5.tar.gz
+	mv glog-0.3.5 glog
+	rm -rf v0.3.5.tar.gz
+fi
 

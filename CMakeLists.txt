@@ -9,6 +9,10 @@ set(BUILD_SHARED_LIBS 0 CACHE BOOL "no need shared libs for any 3rdparty libs")
 
 add_subdirectory(3rdparty/gflags)
 
+option(WITH_GFLAGS "" OFF)
+set(BUILD_TESTING 0 CACHE BOOL "no glog unittest")
+add_subdirectory(3rdparty/glog)
+
 set(BOOST_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/boost")
 add_subdirectory(3rdparty/boost-cmake)
 
@@ -20,4 +24,5 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
 add_subdirectory(src/boost/thread)
 add_subdirectory(src/test-gflags)
+add_subdirectory(src/test-glog)
 
